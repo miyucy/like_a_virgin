@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+require "like_a_virgin"
+
+ENV["RAILS_ENV"] ||= "test"
+begin
+  require File.expand_path(File.join("config","environment"), Dir.pwd)
+rescue LoadError
+  $stderr.puts "could not load config/environment.rb. Are we in Rails.root?"
+end
+require "spec"
+require "spec/rails"
+
+LikeAVirgin.start
